@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Inicio</title>
-    <link rel="stylesheet" href="/facturacion_tienda/css/inicio.css">
+    <link rel="stylesheet" href="/Laboratorio1Factura/css/inicio.css">
     <!--letra body-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
         <h1 class="inicio">'Bienvenido'</h1>
         <div class="video-container">
             <video autoplay muted loop>
-                <source src="/facturacion_tienda/resource/animated.mp4" type="video/mp4">
+                <source src="/Laboratorio1Factura/resource/animated.mp4" type="video/mp4">
             </video>
         </div>
     </div>

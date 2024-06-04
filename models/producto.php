@@ -26,7 +26,5 @@ class Producto {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
-    // Otros métodos necesarios según los requisitos
 }
 ?>

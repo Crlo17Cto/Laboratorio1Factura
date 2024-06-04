@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Productos</title>
-    <link rel="stylesheet" href="/facturacion_tienda/css/listadoPro.css">
+    <link rel="stylesheet" href="/Laboratorio1Factura/css/listadoPro.css">
      <!--letra titulo header-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

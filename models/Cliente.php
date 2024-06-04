@@ -70,7 +70,5 @@ class Cliente {
         $stmt->bindParam(':telefono', $this->telefono);
         return $stmt->execute();
     }
-
-    // Otros métodos necesarios según los requisitos
 }
 ?>

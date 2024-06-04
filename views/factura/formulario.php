@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generar Factura</title>
-    <link rel="stylesheet" href="/facturacion_tienda/css/formulario.css">
+    <link rel="stylesheet" href="/Laboratorio1Factura/css/formulario.css">
      <!--letra titulo header-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
 
     <div class="container">
         <h2>Generar Factura</h2>
-        <form id="facturaForm" method="post" action="/facturacion_tienda/index.php?controller=factura&action=generarFactura">
+        <form id="facturaForm" method="post" action="/Laboratorio1Factura/index.php?controller=factura&action=generarFactura">
             <div>
                 <label for="idCliente">Seleccionar Cliente:</label>
                 <select name="idCliente" id="idCliente" required>
@@ -131,7 +131,7 @@
             // Redirigir al formulario de registro de cliente si se selecciona "Registrar nuevo cliente"
             document.getElementById('idCliente').addEventListener('change', function() {
                 if (this.value === 'nuevo') {
-                    window.location.href = '/facturacion_tienda/index.php?controller=cliente&action=mostrarFormularioRegistro';
+                    window.location.href = '/Laboratorio1Factura/index.php?controller=cliente&action=mostrarFormularioRegistro';
                 }
             });
         });

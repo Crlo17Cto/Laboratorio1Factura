@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de Factura</title>
-    <link rel="stylesheet" href="/facturacion_tienda/css/detalle.css">
+    <link rel="stylesheet" href="/Laboratorio1Factura/css/detalle.css">
       <!--letra titulo header-->
       <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

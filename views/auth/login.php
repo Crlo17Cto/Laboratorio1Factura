@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('/facturacion_tienda/resource/login.jpg') no-repeat center center fixed; 
+            background: url('/Laboratorio1Factura/resource/login.jpg') no-repeat center center fixed; 
             background-size: cover;
         }
 
@@ -78,7 +78,7 @@
 <body class="bodyLogin">
     <div class="containerLogin">
         <h2>Iniciar Sesión</h2>
-        <form action="/facturacion_tienda/index.php?controller=auth&action=login" method="post">
+        <form action="/Laboratorio1Factura/index.php?controller=auth&action=login" method="post">
             <div class="input-group">
                 <label for="username">Usuario:</label>
                 <input type="text" id="username" name="username" required>

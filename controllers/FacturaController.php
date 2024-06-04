@@ -39,7 +39,7 @@ class FacturaController
             Factura::generarFactura($idCliente, $productos);
 
             // Redireccionar a otra página (por ejemplo, página principal)
-            header('Location: /facturacion_tienda/index.php?controller=factura&action=listarFacturas');
+            header('Location: /Laboratorio1Factura/index.php?controller=factura&action=listarFacturas');
             exit();
         }
 
@@ -71,7 +71,7 @@ class FacturaController
 
         // Si no se encontró información, redirigir al listado de facturas
         if (empty($detalleFactura)) {
-            header('Location: /facturacion_tienda/index.php?controller=factura&action=listarFacturas');
+            header('Location: /Laboratorio1Factura/index.php?controller=factura&action=listarFacturas');
             exit();
         }
 
@@ -121,7 +121,7 @@ class FacturaController
             $stmt->execute();
 
             // Redireccionar al listado de facturas utilizando el controlador y la acción correspondientes
-            header('Location: /facturacion_tienda/index.php?controller=factura&action=listarFacturas');
+            header('Location: /Laboratorio1Factura/index.php?controller=factura&action=listarFacturas');
             exit();
         } else {
             echo "El estado proporcionado no es válido";

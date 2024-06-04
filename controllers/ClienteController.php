@@ -1,5 +1,4 @@
 <?php
-// /facturacion_tienda/controllers/ClienteController.php
 require_once 'models/Cliente.php';
 
 class ClienteController {
@@ -20,7 +19,7 @@ class ClienteController {
             Cliente::registrarCliente($nombreCompleto, $tipoDocumento, $numeroDocumento, $telefono, $email);
 
             // Redirigir al formulario de generación de factura con el nuevo cliente seleccionado
-            header('Location: /facturacion_tienda/index.php?controller=factura&action=generarFactura');
+            header('Location: /Laboratorio1Factura/index.php?controller=factura&action=generarFactura');
             exit();
         }
     }

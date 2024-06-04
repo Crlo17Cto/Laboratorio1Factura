@@ -11,18 +11,18 @@ class AuthController {
         if ($usuario) {
             // Guardar usuario en la sesión
             $_SESSION['user'] = $usuario;
-            header("Location: /facturacion_tienda/index.php");
+            header("Location: /Laboratorio1Factura/index.php");
             exit();
         } else {
             // Redirigir con error
-            header("Location: /facturacion_tienda/views/auth/login.php?errorSesion=1");
+            header("Location: /Laboratorio1Factura/views/auth/login.php?errorSesion=1");
             exit();
         }
     }
 
     public function logout() {
         session_destroy();
-        header("Location: /facturacion_tienda/views/auth/login.php");
+        header("Location: /Laboratorio1Factura/views/auth/login.php");
         exit();
     }
 }

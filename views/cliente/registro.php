@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Cliente</title>
-    <link rel="stylesheet" href="/facturacion_tienda/css/registro.css">
+    <link rel="stylesheet" href="/Laboratorio1Factura/css/registro.css">
     <!--letra titulo header-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
 
     <div class="container">
         <h2>Registro de Cliente</h2>
-        <form id="clienteForm" method="post" action="/facturacion_tienda/index.php?controller=cliente&action=registrar">
+        <form id="clienteForm" method="post" action="/Laboratorio1Factura/index.php?controller=cliente&action=registrar">
             <div>
                 <label for="nombreCompleto">Nombre Completo:</label>
                 <input type="text" id="nombreCompleto" name="nombreCompleto" required>
@@ -52,7 +52,7 @@
         </form>
         <br>
         <br>
-        <a href="/facturacion_tienda/index.php?controller=factura&action=generarFactura">Volver a la generación de factura</a>
+        <a href="/Laboratorio1Factura/index.php?controller=factura&action=generarFactura">Volver a la generación de factura</a>
     </div>
 
     <?php require_once 'views/partials/footer.php'; ?>

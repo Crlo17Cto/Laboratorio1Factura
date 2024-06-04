@@ -5,7 +5,7 @@ require_once 'config/Database.php';
 
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['user']) && ($_GET['controller'] !== 'auth' || $_GET['action'] !== 'login')) {
-    header('Location: /facturacion_tienda/views/auth/login.php');
+    header('Location: /Laboratorio1Factura/views/auth/login.php');
     exit();
 }
 
