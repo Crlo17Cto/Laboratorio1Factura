@@ -3,7 +3,6 @@ require_once 'models/Cliente.php';
 
 class ClienteController {
     public function mostrarFormularioRegistro() {
-        // Vista del formulario de registro
         require_once 'views/cliente/registro.php';
     }
 

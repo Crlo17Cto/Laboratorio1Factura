@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <?php require_once 'views/partials/header.php'; ?>
+    <?php require_once '../partials/header.php'; ?>
 
     <div class="container">
         <h2>Registro de Cliente</h2>
@@ -55,7 +55,7 @@
         <a href="/Laboratorio1Factura/index.php?controller=factura&action=generarFactura">Volver a la generación de factura</a>
     </div>
 
-    <?php require_once 'views/partials/footer.php'; ?>
+    <?php require_once '../partials/footer.php'; ?>
 </body>
 
 </html>

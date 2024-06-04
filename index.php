@@ -24,26 +24,6 @@ if ($controller === null && $action === null) {
             $facturaController = new FacturaController();
 
             switch ($action) {
-                case 'cliente':
-                    require_once 'controllers/ClienteController.php';
-                    $clienteController = new ClienteController();
-
-                    // Selecciona la acción de ClienteController
-                    $actionCliente = $_GET['action2'] ?? 'mostrarFormularioRegistro';
-
-                    switch ($actionCliente) {
-                        case 'registrar':
-                            $clienteController->registrarCliente();
-                            break;
-                        case 'mostrarFormularioRegistro':
-                            $clienteController->mostrarFormularioRegistro();
-                            break;
-                        default:
-                            echo "Acción no válida para cliente";
-                            break;
-                    }
-                    break;
-
                 case 'generarFactura':
                     $facturaController->generarFactura();
                     break;
@@ -104,7 +84,7 @@ if ($controller === null && $action === null) {
             }
             break;
 
-        case 'cliente': // Agregar el case para el controlador cliente
+        case 'cliente':
             require_once 'controllers/ClienteController.php';
             $clienteController = new ClienteController();
 
@@ -112,7 +92,7 @@ if ($controller === null && $action === null) {
                 case 'mostrarFormularioRegistro':
                     $clienteController->mostrarFormularioRegistro();
                     break;
-                case 'registrar': // Agregar el case para la acción registrar
+                case 'registrar':
                     $clienteController->registrarCliente();
                     break;
                 default:
@@ -131,17 +111,20 @@ $content = ob_get_clean(); // Obtiene el contenido del búfer y lo limpia
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facturación Tienda</title>
-    <link rel="stylesheet" href="/facturacion_tienda/css/styles.css">
 </head>
+
 <body>
     <?php require_once 'views/partials/header.php'; ?>
     <div class="container">
-        <?php echo $content; // Imprime el contenido dinámico ?>
+        <?php echo $content; // Imprime el contenido dinámico 
+        ?>
     </div>
     <?php require_once 'views/partials/footer.php'; ?>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <?php
-class Cliente {
+class Cliente
+{
     private $id;
     private $nombreCompleto;
     private $tipoDocumento;
@@ -7,7 +8,8 @@ class Cliente {
     private $email;
     private $telefono;
 
-    public function __construct($id, $nombreCompleto, $tipoDocumento, $numeroDocumento, $email, $telefono) {
+    public function __construct($id, $nombreCompleto, $tipoDocumento, $numeroDocumento, $email, $telefono)
+    {
         $this->id = $id;
         $this->nombreCompleto = $nombreCompleto;
         $this->tipoDocumento = $tipoDocumento;
@@ -15,7 +17,9 @@ class Cliente {
         $this->email = $email;
         $this->telefono = $telefono;
     }
-    public static function obtenerTodos() {
+
+    public static function obtenerTodos()
+    {
         $conn = Database::connect();
         $sql = "SELECT id, nombreCompleto FROM clientes";
         $stmt = $conn->prepare($sql);
@@ -23,7 +27,8 @@ class Cliente {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function obtenerClientePorId($id) {
+    public static function obtenerClientePorId($id)
+    {
         $conn = Database::connect();
         $sql = "SELECT * FROM clientes WHERE id = :id";
         $stmt = $conn->prepare($sql);
@@ -32,7 +37,8 @@ class Cliente {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public static function registrarCliente($nombreCompleto, $tipoDocumento, $numeroDocumento, $telefono, $email) {
+    public static function registrarCliente($nombreCompleto, $tipoDocumento, $numeroDocumento, $telefono, $email)
+    {
         try {
             $conn = Database::connect();
 
@@ -55,7 +61,8 @@ class Cliente {
         }
     }
 
-    public function actualizarCliente() {
+    public function actualizarCliente()
+    {
         $conn = Database::connect();
         $sql = "UPDATE clientes 
                 SET nombreCompleto = :nombreCompleto, tipoDocumento = :tipoDocumento, 
@@ -71,4 +78,3 @@ class Cliente {
         return $stmt->execute();
     }
 }
-?>

@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generar Factura</title>
     <link rel="stylesheet" href="/Laboratorio1Factura/css/formulario.css">
-     <!--letra titulo header-->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--letra titulo header-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Danfo&family=Jaro:opsz@6..72&family=Jersey+25+Charted&family=
-    Permanent+Marker&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Danfo&family=Jaro:opsz@6..72&family=Jersey+25+Charted&family=Permanent+Marker&family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <!--letra opciones header-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Danfo&family=Jaro:opsz@6..72&family=Jersey+25+Charted&family=
-    Oleo+Script:wght@400;700&family=Permanent+Marker&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Danfo&family=Jaro:opsz@6..72&family=Jersey+25+Charted&family=Oleo+Script:wght@400;700&family=Permanent+Marker&family=Rubik+Mono+One&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <?php require_once 'views/partials/header.php'; ?>
 
@@ -38,8 +34,8 @@
                 <h3 class="titulo-productos">Productos</h3>
                 <div class="producto" id="producto1">
                     <div>
-                        <label for="producto1">Producto:</label>
-                        <select name="producto[]" required>
+                        <label for="productoSelect1">Producto:</label>
+                        <select name="producto[]" id="productoSelect1" required>
                             <?php foreach ($productos as $producto) : ?>
                                 <option value="<?php echo $producto['id']; ?>">
                                     <?php echo $producto['nombre'] . " - $" . number_format($producto['precio'], 0, ',', '.'); ?>
@@ -49,7 +45,7 @@
                     </div>
                     <div>
                         <label for="cantidad1">Cantidad:</label>
-                        <input type="number" name="cantidad[]" min="1" value="1" required>
+                        <input type="number" name="cantidad[]" id="cantidad1" min="1" value="1" required>
                     </div>
                 </div>
             </div>
@@ -61,7 +57,6 @@
             </div>
             <button type="submit">Generar Factura</button>
         </form>
-
     </div>
 
     <script>
@@ -72,8 +67,8 @@
             let productoIndex = 1;
 
             agregarProductoBtn.addEventListener('click', function() {
-                const productoSelect = document.querySelector('select[name="producto[]"]');
-                const cantidadInput = document.querySelector('input[name="cantidad[]"]');
+                const productoSelect = document.getElementById('productoSelect1');
+                const cantidadInput = document.getElementById('cantidad1');
 
                 const productoId = productoSelect.value;
                 const productoTexto = productoSelect.options[productoSelect.selectedIndex].text;
@@ -131,12 +126,11 @@
             // Redirigir al formulario de registro de cliente si se selecciona "Registrar nuevo cliente"
             document.getElementById('idCliente').addEventListener('change', function() {
                 if (this.value === 'nuevo') {
-                    window.location.href = '/Laboratorio1Factura/index.php?controller=cliente&action=mostrarFormularioRegistro';
+                    window.location.href = '/Laboratorio1Factura/views/cliente/registro.php';
                 }
             });
         });
     </script>
     <?php require_once 'views/partials/footer.php'; ?>
 </body>
-
 </html>

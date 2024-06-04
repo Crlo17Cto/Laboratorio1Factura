@@ -7,6 +7,14 @@ class FacturaController
 {
     public function generarFactura()
     {
+        // Verificar si hay clientes en la base de datos
+        $clientes = Cliente::obtenerTodos();
+        if (empty($clientes)) {
+            // Redirigir al formulario de registro de cliente si no hay clientes
+            header('Location: /Laboratorio1Factura/views/cliente/registro.php');
+            exit();
+        }
+
         // Procesar el formulario de generación de factura
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $idCliente = $_POST['idCliente'];
