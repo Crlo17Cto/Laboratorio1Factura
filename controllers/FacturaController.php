@@ -43,11 +43,23 @@ class FacturaController
             exit();
         }
 
-
+        // Obtener listado de clientes y productos para mostrar en el formulario
+        $clientes = Cliente::obtenerTodos();
         $productos = Producto::obtenerTodos();
 
         // Vista del formulario de generación de factura
         require_once 'views/factura/formulario.php';
+    }
+
+    // Otros métodos del controlador...
+
+    public function listarFacturas()
+    {
+        // Obtener todas las facturas generadas
+        $facturas = Factura::obtenerFacturas();
+
+        // Vista del listado de facturas
+        require_once 'views/factura/listado.php';
     }
 
 
@@ -67,6 +79,32 @@ class FacturaController
         require_once 'views/factura/detalle.php';
     }
 
+
+
+    public function registrarCliente()
+    {
+        // Este método registra un nuevo cliente
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $nombreCompleto = $_POST['nombreCompleto'];
+            $tipoDocumento = $_POST['tipoDocumento'];
+            $numeroDocumento = $_POST['numeroDocumento'];
+            $telefono = $_POST['telefono'];
+            $email = $_POST['email'];
+
+            // Aquí debes validar y sanitizar los datos antes de insertar en la base de datos
+
+            $resultado = Cliente::registrarCliente($nombreCompleto, $tipoDocumento, $numeroDocumento, $telefono, $email);
+
+            if ($resultado) {
+                echo "Cliente registrado correctamente.";
+            } else {
+                echo "Error al registrar el cliente.";
+            }
+        }
+
+        // Vista del formulario de registro de cliente
+        require_once 'views/cliente/registro.php';
+    }
 
 
     public function cambiarEstadoFactura($referencia, $nuevoEstado)
